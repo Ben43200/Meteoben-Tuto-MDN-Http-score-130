@@ -1,0 +1,18 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 100dvh; /* Assurez-vous que le conteneur parent prend toute la hauteur de la page */
+    margin: 0; /* Supprimez les marges par défaut */
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    font-size: 2rem;
+    font-weight: bold;
+    color:green;
+}

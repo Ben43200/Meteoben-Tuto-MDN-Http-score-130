@@ -22,7 +22,7 @@ header("X-XSS-Protection: 1; mode=block");
 header("Referrer-Policy: strict-origin-when-cross-origin");
 
 // Configurer Feature-Policy
-header("Permissions-Policy: geolocation=(), midi=(), notifications=(), push=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), speaker=(), vibrate=(), fullscreen=(), payment=()");
+header("Permissions-Policy: geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()");
 
 // Configurer les cookies sécurisés
 $cookieParams = session_get_cookie_params();
@@ -46,12 +46,13 @@ session_start(); // Démarrer la session
     <title>PHP security</title>
     <meta name="description" content="Implementer sécurité php">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" nonce="<?php echo $nonce; ?>">
+    <link rel="stylesheet" href="css/style.css" nonce="<?php echo $nonce; ?>">
 </head>
 
 <body>
     <main>
         <div data-aos="fade-up-left" data-aos-duration="1500">
-            <span> Test </span>
+            <span> Meteoben Tuto Score MDN HTTP Observatory report "130" </span>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous" nonce="<?php echo $nonce; ?>"></script>
