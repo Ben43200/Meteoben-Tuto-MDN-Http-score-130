@@ -1,5 +1,25 @@
    
    
-   <IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'none'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g='; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; manifest-src 'self';"
+<IfModule mod_headers.c>
+# mise en place de la politique de sécurité des contenus
+# Configurer Content-Security-Policy
+Header set Content-Security-Policy "default-src 'none'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g='; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; manifest-src 'self';"
+
+# Configurer Strict-Transport-Security (HSTS)
+Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+# Configurer X-Content-Type-Options
+Header set X-Content-Type-Options "nosniff"
+
+# Configurer X-Frame-Options
+Header set X-Frame-Options "DENY"
+
+# Configurer X-XSS-Protection
+Header set X-XSS-Protection "1; mode=block"
+
+# Configurer Referrer-Policy
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Configurer Permissions-Policy
+Header set Permissions-Policy "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()"
     </IfModule>

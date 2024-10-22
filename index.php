@@ -5,25 +5,6 @@ $nonce = base64_encode(random_bytes(16)); // Générer un nonce aléatoire
 // Configurer la politique de sécurité du contenu (CSP 130 avec .htaccess)
 header("Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-$nonce'; style-src 'self' 'nonce-$nonce'; img-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; report-uri /csp-violation-report-endpoint;");
 
-
-// Configurer Strict-Transport-Security (HSTS)
-header("Strict-Transport-Security: max-age=63072000; includeSubDomains; preload");
-
-// Configurer X-Content-Type-Options
-header("X-Content-Type-Options: nosniff");
-
-// Configurer X-Frame-Options
-header("X-Frame-Options: DENY");
-
-// Configurer X-XSS-Protection
-header("X-XSS-Protection: 1; mode=block");
-
-// Configurer Referrer-Policy
-header("Referrer-Policy: strict-origin-when-cross-origin");
-
-// Configurer Feature-Policy
-header("Permissions-Policy: geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()");
-
 // Configurer les cookies sécurisés
 $cookieParams = session_get_cookie_params();
 session_set_cookie_params([
@@ -39,7 +20,6 @@ session_start(); // Démarrer la session
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +28,6 @@ session_start(); // Démarrer la session
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" nonce="<?php echo $nonce; ?>">
     <link rel="stylesheet" href="css/style.css" nonce="<?php echo $nonce; ?>">
 </head>
-
 <body>
     <main>
         <div data-aos="fade-up-left" data-aos-duration="1500">
@@ -61,5 +40,4 @@ session_start(); // Démarrer la session
         AOS.init();
     </script>
 </body>
-
 </html>
