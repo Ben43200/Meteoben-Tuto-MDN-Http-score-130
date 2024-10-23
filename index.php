@@ -3,7 +3,9 @@
 $nonce = base64_encode(random_bytes(16)); // Générer un nonce aléatoire
 
 // Configurer la politique de sécurité du contenu (CSP 130 avec .htaccess)
-header("Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-$nonce'; style-src 'self' 'nonce-$nonce'; img-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; report-uri /csp-violation-report-endpoint;");
+header("Content-Security-Policy: default-src 'none'; script-src 'self' 'nonce-$nonce'; style-src 'self' 'nonce-$nonce';");
+
+
 
 // Configurer les cookies sécurisés
 $cookieParams = session_get_cookie_params();
