@@ -3,7 +3,7 @@
 # partie CSP .htaccess complément index.php 130
 
 Header set Content-Security-Policy "default-src 'none'; 
-script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g=' ; 
+script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g='; 
 style-src 'self' https://cdnjs.cloudflare.com; 
 frame-src 'none'; img-src 'self'; font-src 'self'; 
 connect-src 'self'; form-action 'self'; upgrade-insecure-requests;
