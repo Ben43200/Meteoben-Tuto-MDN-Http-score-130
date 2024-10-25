@@ -1,9 +1,15 @@
-   
-   
+  
 <IfModule mod_headers.c>
 # partie CSP .htaccess complément index.php 130
 
-Header set Content-Security-Policy "default-src 'none'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g=' ;  style-src 'self' https://cdnjs.cloudflare.com;   frame-src 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; report-uri /csp-violation-report-endpoint; object-src 'none'; base-uri 'self'; frame-ancestors 'none';" 
+Header set Content-Security-Policy "default-src 'none'; 
+script-src 'self' https://cdnjs.cloudflare.com 'sha256-f/s/2m4KTNtgGbrpJo7zm3bND1Ed4CuiOqPGNMKuj4g=' ; 
+style-src 'self' https://cdnjs.cloudflare.com; 
+frame-src 'none'; img-src 'self'; font-src 'self'; 
+connect-src 'self'; form-action 'self'; upgrade-insecure-requests;
+block-all-mixed-content; report-uri /csp-violation-report-endpoint; 
+object-src 'none'; base-uri 'self'; frame-ancestors 'none';" 
+ 
 
 # Configurer Strict-Transport-Security (HSTS)
 Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
